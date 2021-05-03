@@ -1,0 +1,13 @@
+sudo docker build  -t idu_img:v1 .
+
+sudo docker images
+
+# internal port 80
+sudo docker run -it -d --name idu -v ~/idu:/var/www/html/idu --network nginxproxymanager_default idu_img:v1
+
+sudo docker ps
+
+sudo docker exec -it idu /bin/bash
+sh start.sh
+
+Add proxy host to proxy manager
